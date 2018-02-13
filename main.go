@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/modmuss50/FactorioWrapper/utils"
-	"github.com/modmuss50/FactorioWrapper/config"
+	"github.com/hadn69/FactorioWrapper/utils"
+	"github.com/hadn69/FactorioWrapper/config"
 	"os"
 	"bufio"
 	"io"
@@ -83,7 +83,7 @@ func startGame(processDir string, version string) *exec.Cmd {
 		fmt.Println("Is the game allready running?")
 	}
 	fmt.Println("Starting game...")
-	factorioProcess := getExec(processDir, "--start-server")
+	factorioProcess := getExec(processDir, "--start-server --server-settings /data/factorio/data/server-settings.json")
 
 	factorioInput, err := factorioProcess.StdinPipe()
 	input = factorioInput
